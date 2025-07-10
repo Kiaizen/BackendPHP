@@ -1,13 +1,14 @@
 <?php
-require_once 'config.php';
+$host = getenv("DB_HOST");
+$user = getenv("DB_USER");
+$pass = getenv("DB_PASS");
+$db   = getenv("DB_NAME");
 
-function getDBConnection() {
-    try {
-        $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ]);
-        return $pdo;
-    } catch (PDOException $e) {
-        die("Erro na conexão: " . $e->getMessage());
-    }
+
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo json_encode(['erro' => 'Erro na conexão: ' . $e->getMessage()]);
+    exit();
 }
