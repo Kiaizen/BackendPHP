@@ -1,6 +1,5 @@
 <?php
-var_dump($host, $port, $db, $user, $pass);
-exit();
+
 
 function getDBConnection()
 {
@@ -19,3 +18,5 @@ function getDBConnection()
         exit();
     }
 }
+var_dump($host, $port, $db, $user, $pass);
+exit();
