@@ -1,7 +1,7 @@
 <?php
 function getDBConnection()
 {
-    $host = getenv("MYSQL_PUBLIC_URL");
+    $host = getenv("MYSQL_URL");
     $user = getenv("MYSQLUSER");
     $pass = getenv("MYSQLPASSWORD");
     $db   = getenv("MYSQLDATABASE");
