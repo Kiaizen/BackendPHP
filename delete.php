@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 
-require_once '../Tarefa.php';
+require_once 'Tarefa.php';
 
 $data = json_decode(file_get_contents("php://input"), true);
 $id = $data['id'] ?? 0;

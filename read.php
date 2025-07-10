@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 
-require_once '../Tarefa.php';
+require_once 'Tarefa.php';
 
 $tarefa = new Tarefa();
 echo json_encode($tarefa->listar());
