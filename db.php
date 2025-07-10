@@ -1,4 +1,7 @@
 <?php
+var_dump($host, $port, $db, $user, $pass);
+exit();
+
 function getDBConnection()
 {
     $host = getenv("MYSQL_URL");
