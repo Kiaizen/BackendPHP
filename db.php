@@ -3,11 +3,11 @@
 
 function getDBConnection()
 {
-    $host = getenv("MYSQL_URL");
+    $host = getenv("MYSQLHOST");
     $user = getenv("MYSQLUSER");
     $pass = getenv("MYSQLPASSWORD");
     $db   = getenv("MYSQLDATABASE");
-    $port = getenv('MYSQLPORT');
+    $port = getenv("MYSQLPORT");
 
     try {
         $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db", $user, $pass);
